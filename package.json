@@ -22,7 +22,9 @@
   "homepage": "https://github.com/jhenriquez/protospace",
   "devDependencies": {
     "chai": "^2.1.2",
-    "lodash": "^3.5.0",
     "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "lodash": "^3.5.0"
   }
 }
