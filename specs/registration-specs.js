@@ -51,4 +51,10 @@ describe('Objects and Functions Registration', function () {
   it('nameOverride can not be undefined when registering objects', function () {
     (function() { proto.register({}, 'Some.Namespace'); }).should.throw(Error);
   });
+
+  it('should allow to register an object at the root namespace', function () {
+    var obj = {};
+    proto.register(obj, '', 'exportProperty').should.eql({ exportProperty: obj });
+    proto.register(obj, null, 'exportProperty').should.eql({ exportProperty: obj });
+  });
 });
