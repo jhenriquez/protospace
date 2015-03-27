@@ -10,8 +10,8 @@ describe('Clousure', function () {
     var spaceTwo = require('../');
     spaceOne.register(function pablo() { }, 'Some.Namespace');
     spaceTwo.register(function pablo() { }, 'Some.Namespace');
-    spaceOne.getObjects().length.should.be.at.least(2);
-    spaceTwo.getObjects().length.should.be.at.least(2);
+    spaceOne.getGlobalRegistry().length.should.be.at.least(2);
+    spaceTwo.getGlobalRegistry().length.should.be.at.least(2);
   });
 
   it('should not contaminate the global space.', function () {

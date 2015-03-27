@@ -57,4 +57,16 @@ describe('Objects and Functions Registration', function () {
     proto.register(obj, '', 'exportProperty').should.eql({ exportProperty: obj });
     proto.register(obj, null, 'exportProperty').should.eql({ exportProperty: obj });
   });
+
+  describe('Named Registries', function () {
+    beforeEach(function () {
+      proto.clearNamedRegistry();
+    });
+
+    it('should allow to have named (contained) registries.', function () {
+      var obj = {};
+      proto.registerNamed('NamedRegistry', obj, '', 'exportProperty').should.eql({ exportProperty: obj });
+      proto.getNamedRegistry('NamedRegistry').should.eql([{ exportProperty: obj }]);
+    });
+  });
 });

@@ -3,6 +3,11 @@ var registry = require('./lib/registry'),
 
 module.exports = {
   register: registry.register,
-  getObjects: registry.getObjects,
-  bundle: bundler
+  registerNamed: registry.registerNamed,
+  getGlobalRegistry: registry.getGlobalRegistry,
+  clearGlobalRegistry: registry.clearGlobalRegistry,
+  clearNamedRegistry: registry.clearNamedRegistry,
+  getNamedRegistry: registry.getNamedRegistry,
+  bundle: bundler.bundle,
+  bundleFrom: bundler.bundleFrom
 };
